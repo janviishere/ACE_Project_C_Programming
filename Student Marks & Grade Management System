@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <conio.h>
+
+int calculateTotal(int marks[], int size);
+float calculateAverage(int total, int numSubjects);
+char determineGrade(float average);
+void displayResults(int total, float average, char grade);
+
+int main()
+{
+    const int num_subjects = 5;
+    int marks[num_subjects];
+    
+    printf("Student Marks & Grade Management System\n");
+   
+    
+    // Input marks for each subject
+    for(int i = 0; i < num_subjects; i++)
+    {
+        printf("Enter marks for subject %d (out of 100): ", i+1);
+        scanf("%d", &marks[i]);
+        
+        // Validate input
+        while(marks[i] < 0 || marks[i] > 100)
+        {
+            printf("Invalid marks Please enter between 0-100: ");
+            scanf("%d", &marks[i]);
+        }
+    }
+    
+    // Calculations
+    int total = calculateTotal(marks, num_subjects);
+    float average = calculateAverage(total, num_subjects);
+    char grade = determineGrade(average);
+    
+    // Display results
+    displayResults(total, average, grade);
+    
+    return 0;
+}
+
+// Function to calculate total marks
+int calculateTotal(int marks[], int size)
+{
+    int sum = 0;
+    for(int i = 0; i < size; i++) 
+    {
+        sum += marks[i];
+    }
+    return sum;
+}
+
+// Function to calculate average
+float calculateAverage(int total, int numSubjects) 
+{
+    return (float)total / numSubjects;
+}
+
+// Function to determine grade
+char determineGrade(float average)
+{
+    if(average >= 90) return 'A';
+    else if(average >= 80) return 'B';
+    else if(average >= 70) return 'C';
+    else if(average >= 60) return 'D';
+    else return 'F';
+}
+
+// Function to display results
+void displayResults(int total, float average, char grade) 
+{
+    printf("\nResults:\n");
+    printf("Total Marks: %d\n", total);
+    printf("Average: %.2f\n", average);
+    printf("Grade: %c\n", grade);
+    
+    // Additional grade explanation
+    printf("\nGrading Scale:\n");
+    printf("A: 90-100\n");
+    printf("B: 80-89\n");
+    printf("C: 70-79\n");
+    printf("D: 60-69\n");
+    printf("F: Below 60\n");
+}
