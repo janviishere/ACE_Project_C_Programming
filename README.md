@@ -153,11 +153,11 @@ Grade: B
 
 The program successfully automates grade calculation with: 
 
-✔ Modularity (using functions) 
+Modularity (using functions) 
 
-✔ Efficiency (arrays for storage) 
+Efficiency (arrays for storage) 
 
-✔ User-friendly output  
+User-friendly output  
 
 Future Enhancements:  
 
@@ -175,12 +175,5 @@ Kernighan, B. W., & Ritchie, D. M. (1988). The C Programming Language.
 
 "C Functions and Arrays" – GeeksforGeeks. 
 
- 
-
-Appendix: Full Source Code (Attached)  
-
- 
-
-This report provides a comprehensive overview of the project, covering design, implementation, and testing.  
 
  
